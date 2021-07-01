@@ -51,9 +51,10 @@ function show(contests) {
 	let header = document.getElementById("current-contest");
 
 	let comingContests = getComingContestData(contests);
+	let i = 0, upcomingContests = 0;
 
 	// Loop to access starting 4 contests
-	for(let i=0; i<4; i++) {
+	while(upcomingContests < 4) {
 
 		// Store contest details
 		let contestName = comingContests[i].event;
@@ -61,6 +62,9 @@ function show(contests) {
 		let contestStartDate = contestDate.toDateString();
 		let contestStartTime = comingContests[i].start.substring(11, 19);
 		let contestDuration = (comingContests[i].duration / 3600).toPrecision(2);
+
+		// Update contests index
+		i++;
 
 		if(contestDate.getDate() == todayDate) {
 			header.innerHTML = (
@@ -77,6 +81,9 @@ function show(contests) {
 		);
 
 		table.appendChild(row);
+
+		// Increment upcoming contests.
+		upcomingContests++;
 	}
 }
 
