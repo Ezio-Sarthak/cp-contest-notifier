@@ -113,7 +113,7 @@ function getContestRow(contestName, contestDuration, contestStartDate, contestLi
 	// Set Contest link button
 	let linkBtn = document.createElement("a");
 	linkBtn.innerHTML = "Link";
-	linkBtn.setAttribute("class", "container link-button btn btn-primary");
+	linkBtn.setAttribute("class", "link-button btn btn-outline-warning");
 	linkBtn.setAttribute("href", contestLink);
 	row.appendChild(linkBtn);
 
