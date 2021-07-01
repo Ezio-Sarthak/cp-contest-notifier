@@ -24,9 +24,7 @@ NOTE: Follow the naming **strictly** to avoid pushing the credentials to git.
 
 To use the add-on on a daily basis, you'd need to install the add-on permanently. Follow the below steps for the same:
 
-1. First add `manifest.json` file as a temporary addon in firefox, by navigating to `about:debugging`.
-2. Note the `Extension ID` value and copy-paste its value to `id` parameter of `gecko` under `browser_specific_settings` in `manifest.json`.
-3. Now wrap the required extension files in a `.zip` or `.xpi` file. (The compressed file should contain `mainfest.json`, `credentials.json`, `icons/` dir, `popup.html` and `popup.js`).
-4. Now add this compressed file as add-on by going to `Extensions` -> `Settings icon` -> `Install add-on from file`.
+1. Wrap the required extension files in a `.zip` or `.xpi` file. (The compressed file should contain `mainfest.json`, `credentials.json`, `icons/` dir, `popup.html` and `popup.js`).
+2. Now add this compressed file as add-on by going to `Extensions` -> `Settings icon` -> `Install add-on from file`.
 
-Now you're good to go!
+You're good to go now!
