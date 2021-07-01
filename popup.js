@@ -40,7 +40,6 @@ async function showAPIData(url) {
 	}
 	let data = await response.json();
 
-	console.log(data)
 	show(data.objects);
 }
 
@@ -62,7 +61,7 @@ function show(contests) {
 		let contestStartDate = contestDate.toDateString();
 		let contestStartTime = comingContests[i].start.substring(11, 19);
 		let contestDuration = (comingContests[i].duration / 3600).toPrecision(2);
-		let contestLink = contests[i].href
+		let contestLink = comingContests[i].href;
 
 		// Update contests index
 		i++;
@@ -111,11 +110,13 @@ function getContestRow(contestName, contestDuration, contestStartDate, contestLi
 	row.appendChild(startDate);
 
 	// Set Contest link button
+	let link = document.createElement("td");
 	let linkBtn = document.createElement("a");
 	linkBtn.innerHTML = "Link";
 	linkBtn.setAttribute("class", "link-button btn btn-outline-warning");
 	linkBtn.setAttribute("href", contestLink);
-	row.appendChild(linkBtn);
+	link.appendChild(linkBtn);
+	row.appendChild(link);
 
 	return row;
 }
