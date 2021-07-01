@@ -2,7 +2,7 @@
 A firefox extension that provides details of upcoming CP contests from platforms like CodeForces, CodeChef and AtCoder.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/55916430/123145777-cd46cd00-d47a-11eb-9ad5-f93736ed41bf.png">
+  <img src="https://user-images.githubusercontent.com/55916430/124091339-5bbae000-da73-11eb-8664-88dea67a6ddb.png">
 </p>
 
 
