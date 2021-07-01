@@ -19,5 +19,6 @@
     "gecko": {
       "id": "cp-contest-notifier@temporary-addon"
     }
-  }
+  },
+  "css": ["popup.css"]
 }

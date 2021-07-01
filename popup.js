@@ -62,6 +62,7 @@ function show(contests) {
 		let contestStartDate = contestDate.toDateString();
 		let contestStartTime = comingContests[i].start.substring(11, 19);
 		let contestDuration = (comingContests[i].duration / 3600).toPrecision(2);
+		let contestLink = contests[i].href
 
 		// Update contests index
 		i++;
@@ -77,7 +78,8 @@ function show(contests) {
 		let row = getContestRow(
 			contestName,
 			contestDuration,
-			`${contestStartDate} ${contestStartTime}`
+			`${contestStartDate} ${contestStartTime}`,
+			contestLink,
 		);
 
 		table.appendChild(row);
@@ -89,7 +91,7 @@ function show(contests) {
 
 
 // Function to add contest details row to table
-function getContestRow(contestName, contestDuration, contestStartDate) {
+function getContestRow(contestName, contestDuration, contestStartDate, contestLink) {
 	// Create a new row instance
 	let row = document.createElement("tr");
 
@@ -107,6 +109,13 @@ function getContestRow(contestName, contestDuration, contestStartDate) {
 	let startDate = document.createElement("td");
 	startDate.innerHTML = contestStartDate;
 	row.appendChild(startDate);
+
+	// Set Contest link button
+	let linkBtn = document.createElement("a");
+	linkBtn.innerHTML = "Link";
+	linkBtn.setAttribute("class", "container link-button btn btn-primary");
+	linkBtn.setAttribute("href", contestLink);
+	row.appendChild(linkBtn);
 
 	return row;
 }
