@@ -18,7 +18,9 @@ The format of credentials should be `JSON`:
 }
 ```
 
-NOTE: Follow the naming **strictly** to avoid pushing the credentials to git.
+NOTE:
+1. Follow the naming **strictly** to avoid pushing the credentials to git.
+2. Make sure to be logged in with CLIST while using the extension.
 
 ## Adding add-on to firefox permanently
 
