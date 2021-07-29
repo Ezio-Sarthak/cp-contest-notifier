@@ -74,8 +74,13 @@ function show(contests) {
 		i++;
 
 		if(contestDate.getDate() == todayDate) {
+			let statusString = "There's a";
+			// If the contest is over or started.
+			if(today.getTime() > contestDate.getTime()) {
+				statusString = "There was a";
+			}
 			header.innerHTML = (
-				`There's a ${contestName} contest today of duration \
+				`${statusString} ${contestName} contest today of duration \
 				${contestDuration} hrs at ${contestStartTime}!`
 			);
 			continue;
