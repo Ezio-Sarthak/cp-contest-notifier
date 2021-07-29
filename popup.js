@@ -57,9 +57,16 @@ function show(contests) {
 
 		// Store contest details
 		let contestName = comingContests[i].event;
+
 		let contestDate = new Date(comingContests[i].start);
-		let contestStartDate = contestDate.toDateString();
-		let contestStartTime = comingContests[i].start.substring(11, 19);
+		let timeUTC = contestDate.getTime();
+		let dateIST = new Date(timeUTC);
+		// date shifting for IST timezone (+5 hours and 30 minutes)
+		dateIST.setHours(dateIST.getHours() + 5);
+		dateIST.setMinutes(dateIST.getMinutes() + 30);
+		let contestStartDate = dateIST.toDateString();
+		let contestStartTime = dateIST.toTimeString().substring(0,8);
+
 		let contestDuration = (comingContests[i].duration / 3600).toPrecision(2);
 		let contestLink = comingContests[i].href;
 
